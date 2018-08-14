@@ -1,21 +1,12 @@
-import { createSwitchNavigator, createBottomTabNavigator, TabNavigator } from 'react-navigation';
-import { WeatherScreen } from '../screens';
+import { createSwitchNavigator, createStackNavigator, createBottomTabNavigator, TabNavigator } from 'react-navigation';
+import { PlayerScreen, PlaylistScreen } from '../screens';
 
-export default TabNavigator(
+export default createStackNavigator(
     {
-        Weather: WeatherScreen,
-        Weather1: WeatherScreen,
-        Weather2: WeatherScreen
+        Playlist: PlaylistScreen,
+        Player: PlayerScreen,
     },
     {
-        tabBarPosition: 'bottom',
-        tabBarOptions: {
-            
-            showIcon: true,
-            showLabel: false,
-            style: {
-                height: 0,
-            }
-        }
+        headerMode: 'none'
     }
 );
