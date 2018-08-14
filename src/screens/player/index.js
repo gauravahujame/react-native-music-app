@@ -43,7 +43,13 @@ export default class PlayerScreen extends React.Component {
                 <ImageBackground
                     source={(require('../../images/album_art.jpg'))}
                     style={{ flex: 5 }}>
-                    <View
+                    <TouchableOpacity
+                        activeOpacity={1}
+                        onPress={() => {
+                            if(menuVisible) {
+                                this.setState({ menuVisible: false })
+                            }
+                        }}
                         backgroundColor='#00000099'
                         style={{
                             position: 'absolute',
@@ -81,7 +87,7 @@ export default class PlayerScreen extends React.Component {
                                 <Text style={{ paddingVertical: 10 }}>Remove</Text>
                             </View>
                         )}
-                    </View>
+                    </TouchableOpacity>
                 </ImageBackground>
                 <View
                     style={{ flex: 1, flexDirection: 'row', backgroundColor: 'black', alignItems: 'center', justifyContent: 'space-around' }}>

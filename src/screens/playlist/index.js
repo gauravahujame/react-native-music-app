@@ -42,7 +42,13 @@ export default class PlaylistScreen extends React.Component {
                 <ImageBackground
                     source={(require('../../images/album_art.jpg'))}
                     style={{ flex: 3 }}>
-                    <View
+                    <TouchableOpacity
+                        activeOpacity={1}
+                        onPress={() => {
+                            if(menuVisible) {
+                                this.setState({ menuVisible: false })
+                            }
+                        }}
                         backgroundColor='#00000099'
                         style={{
                             position: 'absolute',
@@ -80,7 +86,7 @@ export default class PlaylistScreen extends React.Component {
                                 <Text style={{ paddingVertical: 10 }}>Remove</Text>
                             </View>
                         )}
-                    </View>
+                    </TouchableOpacity>
                 </ImageBackground>
                 <LinearGradient
                     colors={['#000', '#0B171E']}
